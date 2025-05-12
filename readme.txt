@@ -3,6 +3,8 @@ Video de correcta compilacion> https://youtu.be/Pa5n4mgE6ZA
 🚀 Configuración del Proyecto
 ==================================
 
+Link de la carpeta con el html de la ejecucion de las preubas: target/site/index.html
+
 📌 **Framework utilizado:** SerenityBDD para pruebas automatizadas.  
 📌 **Dependencias de Maven:**  
 - `serenity-core` → Manejo de pruebas en Serenity.  
