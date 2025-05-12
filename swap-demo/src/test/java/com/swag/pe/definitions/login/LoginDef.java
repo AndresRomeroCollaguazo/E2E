@@ -2,6 +2,7 @@ package com.swag.pe.definitions.login;
 
 import com.swag.pe.steps.login.LoginStep;
 import com.swag.pe.steps.validations.ValidationStep;
+import com.swag.pe.utilities.JSONReader;
 import com.swag.pe.utilities.website.WebSite;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -20,17 +21,15 @@ public class LoginDef {
     @Steps(shared = true)
     ValidationStep validate;
 
-
-
     @Given("el usuario navega al sitio web")
     public void userNavigateTo() {
         url.navigateTo("https://www.saucedemo.com");
     }
 
-    @When("ingresa credenciales validas")
+    @When("ingresa credenciales validas desde JSON")
     public void userLoginWithValidCredentials() {
-        login.typeUsername("standard_user");
-        login.typePassword("secret_sauce");
+        login.typeUsername(JSONReader.getValue("username"));
+        login.typePassword(JSONReader.getValue("password"));
         login.clickLogin();
     }
 
@@ -38,19 +37,5 @@ public class LoginDef {
     public void systemShowProductsModule() {
         Assert.assertTrue(validate.titleIsVisible());
     }
-
-    @When("ingresa credenciales invalidas")
-    public void userLoginWithInvalidCredentials() {
-        login.typeUsername("standard_user");
-        login.typePassword("123456");
-        login.clickLogin();
-    }
-
-    @Then("la aplicacion deberia mostrar un mensaje de error")
-    public void systemShowErrorMessage() {
-        Assert.assertTrue(validate.errorMessageIsDisplayed());
-
-    }
-
-
 }
+

@@ -5,35 +5,33 @@ import net.thucydides.core.annotations.Step;
 
 public class ShoppingCartStep extends ShoppingCartPage {
 
-    @Step("click en el Checkout")
+    @Step("Click en el Checkout")
     public void clickCheckoutButton() {
-    checkoutButton.click();
+        checkoutButton.click();
     }
 
-    @Step("ingresar Nombre")
+    @Step("Ingresar Nombre")
     public void typeFirstName(String firstName) {
         txt_firstname.sendKeys(firstName);
     }
 
-    @Step("ingresar Apellido")
+    @Step("Ingresar Apellido")
     public void typeLastName(String lastName) {
         txt_lastname.sendKeys(lastName);
     }
 
-    @Step("ingresar codigo postal")
-    public void typePostalCode(String postal) {
-        txt_postal.sendKeys(postal);
-
+    @Step("Ingresar código postal")
+    public void typePostalCode(String postalCode) {
+        txt_postal.sendKeys(postalCode);
     }
 
-    @Step("click en continuar")
+    @Step("Click en continuar")
     public void clickContinueButton() {
         continueButton.click();
     }
 
-    @Step("click en finalizar")
+    @Step("Click en finalizar")
     public void clickFinish() {
-    finishButton.click();
+        finishButton.click();
     }
 }
-

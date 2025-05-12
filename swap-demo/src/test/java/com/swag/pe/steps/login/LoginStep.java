@@ -5,17 +5,17 @@ import net.thucydides.core.annotations.Step;
 
 public class LoginStep extends LoginPage {
 
-    @Step("ingresar usuario")
+    @Step("Ingresar nombre de usuario")
     public void typeUsername(String username) {
         txt_username.sendKeys(username);
     }
 
-    @Step("ingresar contraseña")
+    @Step("Ingresar contraseña")
     public void typePassword(String password) {
         txt_password.sendKeys(password);
     }
 
-    @Step("click en el boton login")
+    @Step("Hacer clic en el botón de inicio de sesión")
     public void clickLogin() {
         btn_login.click();
     }

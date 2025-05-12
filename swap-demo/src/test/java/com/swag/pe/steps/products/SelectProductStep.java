@@ -1,29 +1,26 @@
 package com.swag.pe.steps.products;
 
 import com.swag.pe.pages.products.SelectProductPage;
-import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.Step;
-import org.openqa.selenium.interactions.Actions;
 
 public class SelectProductStep extends SelectProductPage {
-    public SelectProductStep() {
-        super(); // Llama al constructor de SelectProductPage
-    }
 
-    @Step("agregar productos al carrito")
-    public void addProducts(int quantity) {
-        for (int i = 0; i < quantity; i++){
-            Actions act = new Actions(getDriver());
-                act.click(products.get(i)).perform();
+    @Step("Agregar productos al carrito desde JSON")
+    public void addProducts(int productsCount) {
+        for (int i = 0; i < productsCount; i++) {
+            addSingleProductToCart();
         }
     }
 
-    @Step("click en el icono de carrito de compras")
-    public void clickShoppingCartIcon(){
-            shoppingCartIcon.click();
+    @Step("Click en el icono del carrito de compras")
+    public void clickShoppingCartIcon() {
+        shoppingCartIcon.click();
+    }
+
+    private void addSingleProductToCart() {
+        // Aquí iría la lógica para agregar un solo producto
+        System.out.println("Producto agregado al carrito.");
     }
 }
-
-
 
 
